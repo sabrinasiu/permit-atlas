@@ -1,64 +1,41 @@
 # San Francisco Permit Atlas
 
-Interactive map of building permits shown in approximate 150 × 150 meter blocks. The map fills the page, with floating search, counts, details, and a collapsible Permit layers tile.
+A full-page illustrated map with a manual construction-history scrubber. Open the website at http://127.0.0.1:5174/ in this session. To run it later, serve this directory with a static server such as `python3 -m http.server 5174`.
 
-The only basemap is a clean vector illustration: pearl gray land (#EEEEEA), thin blue streets, and sky blue water (#C5E3F3). Street and neighborhood names are drawn as crisp vector text at device resolution, with no text blur or pixel-recoloring effect. Address-number, building, POI, shield, grain, and hatching layers are omitted. Numbered street names such as 18th Street remain street names.
+## Explore
 
-## Controls
+Drag the daily timeline or choose a date. The map, top card, timeline count, and permit-type counts show only permits issued on that exact day. Only red issuance heat is displayed; open permit windows, physical-work inspections, and completions are not separate map overlays. There is no stacked chart, cumulative total, Play button, or empty-day banner.
 
-- The mayor dropdown has been removed. All available snapshots are combined for January 11, 2011–October 27, 2026 (439,698 unique permits).
-- A single Permit layers tile expands into a horizontally scrollable tray of additive permit-type cards. The tray starts collapsed; selections remain active when closed. Neighborhood search refines the combined data.
-- Click a block for descriptions, categories, and issue dates. Single-category headings read “N issued [type] permit(s).”
-- No address fields or exact-location markers are displayed. Blocks remain fixed as you zoom.
+Permit layers opens additive type filters. Neighborhood search refines the results. Click an approximate block for descriptions and full recorded histories of permits issued that day. Historical inspection and completion dates remain available in the detail panel. Dates after the selected day are marked accordingly.
 
-Blocks containing multiple selected types display a colored strip for each type. Strips distinguish categories and do not indicate project footprints. Darker strips contain more permits of that type. These are approximate block-sized grid areas, not official city-block boundaries. Text descriptions are public source text and may mention locations in their narrative.
+The heat map shows relative spatial concentrations, with stronger opacity where permits are denser. It does not show exact addresses or individual property boundaries.
 
-## Data coverage
+## Evidence and matching
 
-Complete primary-address permit snapshots were downloaded October 27, 2026, with pagination rather than a single response limit:
-
-- Lurie: 38,547 permits, January 8, 2025 through October 27, 2026.
-- Breed: 164,037 permits, July 11, 2018 through January 7, 2025.
-- Farrell: 17,114 permits, January 23 through July 10, 2018.
-- Acting Breed: 3,457 permits, December 12, 2017 through January 22, 2018.
-- Lee: 216,543 permits, January 11, 2011 through December 11, 2017.
-
-Terms use issue dates, with the successor’s inauguration date assigned to the successor at day-level precision. These are periods when permits were issued, not claims about who initiated or approved a project. All statuses are included. Permit numbers are deduplicated; address fields are omitted and precise coordinates are replaced by grid centers in saved files. Records without map coordinates remain in counts but cannot be plotted.
-
-Source: https://data.sf.gov/resource/i98e-djp9.json
+Building permits: https://data.sf.gov/resource/i98e-djp9.json
+Building inspections: https://data.sf.gov/resource/vckc-dh2h.json
 Dictionary: https://sfdigitalservices.gitbook.io/dataset-explainers/dbi-building-permits-and-permit-addenda-data/building-permits-data-dictionary
-Term chronology: https://en.wikipedia.org/wiki/Mayor_of_San_Francisco
-Breed inauguration city transcript: https://sanfrancisco.granicus.com/TranscriptViewer.php?clip_id=30982&view_id=18
-Lee swearing-in city transcript: https://sanfrancisco.granicus.com/TranscriptViewer.php?clip_id=11391&view_id=197
-Lurie inauguration coverage: https://www.sfchronicle.com/sf/article/daniel-lurie-was-sworn-in-as-s-f-mayor-20013863.php/
 
-Refresh from DataSF requests every page from January 11, 2011 through the present. It does not overwrite the bundled snapshots. If any saved partition fails to load, the map shows an error rather than incomplete totals. Source type 9 has no definition and is labeled unspecified. Electrical and plumbing permits are separate datasets and are not included.
+Snapshot: October 27, 2026. There are 439,698 unique primary-address permits issued January 11, 2011–October 27, 2026. All administrative statuses are retained. The five data partitions are historical download partitions; there is no mayor filter.
 
-## Run or host
+Physical-work evidence is the earliest actual `appointment_date` on a PASSED, non-cancelled, permit-referenced inspection with a qualifying physical-work code. It must match the permit number AND the primary address's parcel, street number/name/suffix, and unit/suffix after conservative normalization. Ambiguous or unmatched addresses are excluded. Scheduled/request dates are not used. Dates before issuance or after a valid completion are excluded. No staff names are collected.
 
-The site is running in this session at http://127.0.0.1:5174/. To run it later, serve this folder with a static server, for example `python3 -m http.server 5174`. File-URL opening may prevent JSON loading. To publish elsewhere, upload the complete directory including data/ and vendor/.
+Qualifying codes: 120 forms, 121 partial forms, 122 reinforcing steel, 123 OK to pour, 125 partial rough frame, 126 rough frame, 127 insulation, 128 masonry, 129 shear wall, 132 flues/vents/ducts, 133 exterior lath, 134 OK to cover, 135 sheetrock nailing, 146 mechanical, 147 partial ceiling, 153 partial pour, 154 partial cover. Code 101 START WORK is excluded because it can be a preconstruction meeting. Office review, plan review, site verification, complaint and preapplication events are excluded. This is a conservative activity proxy, not a certified start-date dataset.
 
-Internet is required for OpenFreeMap vector tiles, map fonts, and live refresh. Leaflet 1.9.4, MapLibre GL JS 5.6.1, and the MapLibre Leaflet bridge 0.1.4 are bundled with their licenses. The local map-style.json sets the palette and label rules. OpenFreeMap, OpenMapTiles, and OpenStreetMap attribution is retained. UI Google Fonts has system-font fallbacks.
+Inspection records begin October 2, 2014. No missing start is inferred. 277,546 qualifying inspection rows referenced permits in this cohort; 274,488 matched the primary address and valid chronology, yielding 106,177 permits with physical-work evidence. The public `work-milestones.json` contains only permit identifiers, evidence dates and codes; private address matching inputs are outside this website.
+
+Valid `completed_date` values determine green. Eighteen completion dates before issuance are excluded and flagged. At the snapshot: 138,688 permit-only records, 18,796 work-documented records, and 282,214 completed records. These sum to 439,698. There are 215 records without usable map coordinates, included in counts but not plotted. The cohort excludes permits issued before January 11, 2011 even if their inspections or completion were later.
+
+Refresh from DataSF refreshes permit records only; the inspection evidence remains dated October 27, 2026 and is separately labeled. Newly refreshed permits without matched snapshot evidence have unknown work start. Refresh does not overwrite bundled files. If inspection evidence fails to load, the interface warns that work-start stages cannot be determined.
+
+## Location and map
+
+Addresses are used privately for evidence matching, then omitted from website records. Saved coordinates are approximate centers of a fixed 150 m grid. No exact-address markers, address fields, or individual property boundaries are displayed. Multiple permits at a property remain distinct permits, not deduplicated construction projects. Primary-address matching does not claim coverage of every secondary address on a multi-address permit. Original descriptions may contain location references in their narrative. Permit identifiers are retained and this is not an anonymized source database.
+
+The only basemap is the illustrated vector map: land #EEEEEA, water #C5E3F3, blue streets. House-number, building, POI and shield layers are omitted; numbered street names remain. Leaflet 1.9.4, MapLibre GL JS 5.6.1 and the Leaflet bridge 0.1.4 are bundled with licenses. Internet is required for OpenFreeMap tiles, vector fonts and live refresh. Attribution is retained.
 
 ## Verification
 
-Checked syntax, all five term boundaries, uniqueness and total counts, omission of address fields, illustrated tile rendering, removal of other basemap controls, mayor selection and count changes, roomy dropdown rendering, full-viewport map layout, opening and closing the layers tray, retained checkbox selections, additive counts (27 + 70 = 97 for two Lurie construction types), and existing block descriptions. The earlier version’s issue-date filters and address-level views have been removed.
+Validated red → orange → green boundaries with a real permit issued March 31, 2023, physical-work inspection August 31, 2023, and completion August 7, 2025. Checked missing starts, invalid completion chronology, future milestones, complete-data totals, and every published work date's relation to issuance and completion. Checked the single daily scrubber, date picker, additive type filtering, neighborhood filtering and clickable detail histories in the browser. No Play control is present.
 
-## Manual timeline and permit history
-
-The floating timeline has no Play button or autoplay. Use its two month inputs or two range handles to set an inclusive month range. All dates resets the full available period.
-
-- Issued: issuance falls inside the period.
-- Completed: a valid recorded completion falls inside the period, even when issuance was earlier.
-- Permit window: issuance overlaps the period through recorded completion or a known terminal status change. A missing end is left unknown, not described as confirmed ongoing construction.
-- History: cumulative permits issued by the end month; types with recorded completion are faded.
-
-The histogram shows the selected permit types’ monthly issuance counts, or completion counts in Completed mode. A block’s history lists original descriptions, both milestone dates, elapsed days when valid, and the current status with its recorded date. Current status is not a reconstruction of past statuses. The snapshots cover permits issued since January 11, 2011; completions of earlier-issued permits are outside this cohort.
-
-Lifecycle audit, October 27, 2026: 439,698 permits; 282,232 have a completion date; 157,466 have no completion recorded. Eighteen completion dates predate issuance and are flagged and excluded from completion filtering and elapsed-day calculations. Issuance is not actual construction start; recorded completion is when inspection staff finalized completed work. No actual construction duration is asserted.
-
-Validated lifecycle boundary conditions, missing completions, recorded closures, inconsistent dates, cumulative history, and elapsed days. Compared browser counts against independently counted source records: new construction has 488 issued permits, 315 valid completions, and one recorded completion in January 2024.
-
-## Push to GitHub
-
-From this directory, initialize Git, commit the files, and create a repository with the GitHub CLI. The data snapshots are included so a clone runs without a data-download setup step. The largest snapshot is about 85 MB, under GitHub’s 100 MiB per-file limit, but may trigger a large-file warning. Publishing to GitHub does not itself deploy a live website.
+Host the complete directory, including data/ and vendor/. The largest permit snapshot is approximately 85 MB; data is substantial and initial loading can take a few seconds. A GitHub repository alone does not publish a live website.
