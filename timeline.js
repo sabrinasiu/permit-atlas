@@ -1,0 +1,7 @@
+(function(root){
+  function day(value){if(typeof value!=='string')return null;const s=value.slice(0,10);if(!/^\d{4}-\d{2}-\d{2}$/.test(s))return null;const date=new Date(s+'T12:00:00Z');return Number.isFinite(date.getTime())&&date.toISOString().slice(0,10)===s?s:null}
+  function milestones(p){const issued=day(p.issued_date),rawCompleted=day(p.completed_date),conflict=!!(issued&&rawCompleted&&rawCompleted<issued),completed=conflict?null:rawCompleted,status=String(p.status||'').toLowerCase(),statusDate=day(p.status_date);const closed=['cancelled','canceled','withdrawn','expired','revoked','disapproved','denied','complete','completed'].includes(status);const closure=closed&&statusDate&&issued&&statusDate>=issued?statusDate:null;return {issued,completed,conflict,status,closure,end:completed||closure}}
+  function matches(p,mode,start,end){const m=milestones(p);if(!m.issued)return false;if(mode==='history')return m.issued<=end;if(mode==='completed')return !!m.completed&&m.completed>=start&&m.completed<=end;if(mode==='window')return m.issued<=end&&(!m.end||m.end>=start);return m.issued>=start&&m.issued<=end}
+  function elapsedDays(p){const m=milestones(p);return m.issued&&m.completed?Math.round((Date.parse(m.completed+'T12:00:00Z')-Date.parse(m.issued+'T12:00:00Z'))/86400000):null}
+  const api={day,milestones,matches,elapsedDays};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.PermitDates=api;
+})(globalThis);
