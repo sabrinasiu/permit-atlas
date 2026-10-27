@@ -1,12 +1,12 @@
-# San Francisco Permit Atlas
+# New Construction Tracker
 
 A full-page illustrated map with a manual construction-history scrubber. Open the website at http://127.0.0.1:5174/ in this session. To run it later, serve this directory with a static server such as `python3 -m http.server 5174`.
 
 ## Explore
 
-Drag the daily timeline or choose a date. The map, top card, timeline count, and permit-type counts show only permits issued on that exact day. Only red issuance heat is displayed; open permit windows, physical-work inspections, and completions are not separate map overlays. There is no stacked chart, cumulative total, Play button, or empty-day banner.
+The bottom timeline is divided into five clickable mayoral-term blocks: Ed Lee (2011–2017), acting mayor London Breed (2017–2018), Mark Farrell (2018), London Breed (2018–2025), and Daniel Lurie (2025–present). Selecting one updates the issuance heat map and counts to that term's exact inclusive dates. The initial selection is Daniel Lurie. There is no daily scrubber, date picker, Play button, stacked chart or empty-result banner.
 
-Permit layers opens additive type filters. Neighborhood search refines the results. Click an approximate block for descriptions and full recorded histories of permits issued that day. Historical inspection and completion dates remain available in the detail panel. Dates after the selected day are marked accordingly.
+Counts reflect issuance during the selected term, not claims that the mayor initiated the project. Only red issuance heat is shown. Only Type 1 new construction and Type 2 wood-frame new construction are included. Both are always enabled; there is no permit-layer selector. Neighborhood search refines the results. Click an approximate block for descriptions and full recorded histories of permits issued during the selected term. Dates after the term are marked accordingly.
 
 The heat map shows relative spatial concentrations, with stronger opacity where permits are denser. It does not show exact addresses or individual property boundaries.
 
