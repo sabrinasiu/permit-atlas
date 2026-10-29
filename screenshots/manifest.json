@@ -1,0 +1,36 @@
+[
+  {
+    "commit": "eb107ef472b9584ad5c1140651bd6ae99712de9d",
+    "title": "Build interactive San Francisco permit map",
+    "screenshot": "commits/01-eb107ef/representative.jpg",
+    "provenance": "Original development screenshot nearest before this commit; representative, not verified as exact committed state.",
+    "source_iteration": "iterations/09-permit-atlas-timeline-preview.jpg",
+    "source_file_timestamp": "2026-10-27T14:06:58.410337-07:00"
+  },
+  {
+    "commit": "ce8bdb69ab2583b676411e714791255f30bd21b7",
+    "title": "Add daily issuance heat map and inspection milestone histories",
+    "screenshot": "commits/02-ce8bdb6/representative.jpg",
+    "provenance": "Original development screenshot nearest before this commit; representative, not verified as exact committed state.",
+    "source_iteration": "iterations/15-permit-issuance-map.jpg",
+    "source_file_timestamp": "2026-10-27T14:55:37.506252-07:00"
+  },
+  {
+    "commit": "841c8f8d2662a74243d871f5e47a405d979c261c",
+    "title": "Refine New Construction Tracker with mayoral term filtering",
+    "screenshot": "commits/03-841c8f8/representative.jpg",
+    "provenance": "Original development screenshot nearest before this commit; representative, not verified as exact committed state.",
+    "source_iteration": "iterations/20-new-construction-tracker-search-only.jpg",
+    "source_file_timestamp": "2026-10-27T15:20:01.355695-07:00"
+  },
+  {
+    "commit_reference": "The commit introducing this folder; resolve with git log --diff-filter=A -- screenshots/commits/04-build-sites-and-unit-breakdowns/overview.jpg",
+    "title": "Build sites, housing-unit breakdowns, affordability and visual history",
+    "screenshots": [
+      "commits/04-build-sites-and-unit-breakdowns/overview.jpg",
+      "commits/04-build-sites-and-unit-breakdowns/units-by-year.jpg",
+      "commits/04-build-sites-and-unit-breakdowns/build-site-detail.jpg"
+    ],
+    "provenance": "Direct browser captures of the working version bundled in this commit, October 28, 2026. Daniel Lurie selected, all neighborhoods."
+  }
+]

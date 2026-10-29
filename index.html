@@ -4,10 +4,14 @@
 <div class="floating-tools"><div class="search-card"><div class="brand"><span class="brandmark">▥</span><span>NEW CONSTRUCTION TRACKER</span><span class="city">SF</span></div><div class="search-wrap"><span>⌕</span><input id="search" aria-label="Search neighborhood" placeholder="Search neighborhood"><button id="clearSearch" aria-label="Clear search">×</button></div></div></div>
 <button id="reset" class="map-button">⌖ <span>Reset view</span></button>
 
+<section id="unitLegend" class="unit-legend" aria-label="Proposed housing units"><h2>Proposed housing units</h2><div id="unitColors"></div><p>Orange marks identified affordable housing.<br>Other housing: light → dark by units.</p></section>
 <div id="notice" role="status" hidden></div><div id="detail" hidden></div>
 <section id="timeline" class="timeline phase-timeline mayor-timeline" aria-label="Mayoral term timeline" hidden>
-<div class="timeline-header"><div><span class="eyebrow">PERMITS BY MAYOR</span><strong id="asOfLabel">Daniel Lurie</strong></div><div class="term-total"><strong id="phaseIssued">—</strong><span>permits issued</span></div></div>
+<div class="timeline-header"><div><span class="eyebrow">NEW CONSTRUCTION BY MAYOR</span><strong id="asOfLabel">Daniel Lurie</strong></div><div class="term-metrics"><div class="term-total"><strong id="buildSiteTotal">—</strong><span>build sites</span></div><div class="term-total"><strong id="phaseIssued">—</strong><span>units in permits</span></div></div></div>
 <div id="mayorBlocks" class="mayor-blocks" role="group" aria-label="Select a mayoral term"></div>
-<p id="termDates" class="term-period"></p><p id="timeExplanation">Select a mayor to see permits issued during their term.</p></section>
+<p id="termDates" class="term-period"></p>
+<div class="build-view-tabs" role="group" aria-label="Breakdown view"><button type="button" id="showBuilds" aria-pressed="true">By build site</button><button type="button" id="showYears" aria-pressed="false">By year</button></div>
+<section id="buildBreakdown" aria-label="Housing units by build site"><div id="buildList"></div><p class="build-method">Sites group permits at the same primary address. A site may contain multiple buildings. Unit counts are shown per permit.</p></section>
+<section id="yearBreakdown" class="year-breakdown" aria-labelledby="yearChartTitle" hidden><h3 id="yearChartTitle">Proposed housing units by issue year</h3><div id="yearChart"></div><p id="yearChartNote">* Partial year within the selected term.</p></section><p id="timeExplanation">Select a mayor to see permits issued during their term.</p></section>
 <div class="map-metadata"><span class="source"><span class="live-dot"></span><span id="sourceStatus">Loading DataSF snapshot…</span></span><button id="refresh" class="text-button">↻ Refresh from DataSF</button><a href="https://data.sf.gov/Housing-and-Buildings/Building-Permits/i98e-djp9/about_data" target="_blank" rel="noopener">DataSF ↗</a></div>
-</main><script src="vendor/leaflet.js"></script><script src="vendor/maplibre-gl.js"></script><script src="vendor/leaflet-maplibre-gl.js"></script><script src="timeline.js"></script><script src="app.js"></script></body></html>
+</main><script src="vendor/leaflet.js"></script><script src="vendor/maplibre-gl.js"></script><script src="vendor/leaflet-maplibre-gl.js"></script><script src="timeline.js"></script><script src="classification.js"></script><script src="yearly.js"></script><script src="builds.js"></script><script src="app.js"></script></body></html>

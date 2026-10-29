@@ -1,0 +1,5 @@
+(function(root){
+ function counts(records,start,end){const bins=[];for(let year=+start.slice(0,4);year<=+end.slice(0,4);year++)bins.push({year,count:0,partial:start>year+'-01-01'||end<year+'-12-31'});for(const p of records){const day=p._issuedDay||(p.issued_date||'').slice(0,10);if(day&&day>=start&&day<=end){const i=+day.slice(0,4)-bins[0].year;if(bins[i])bins[i].count++}}return bins}
+ function units(records,start,end){const bins=counts([],start,end).map(b=>({...b,excluded:0})),seen=new Set();for(const p of records){const day=p._issuedDay||(p.issued_date||'').slice(0,10);if(!day||day<start||day>end)continue;if(p.permit_number){if(seen.has(p.permit_number))continue;seen.add(p.permit_number)}const bin=bins[+day.slice(0,4)-bins[0].year];if(!bin)continue;const c=p._classification;if(c?.residential&&Number.isSafeInteger(c.units)&&c.units>=0)bin.count+=c.units;else bin.excluded++}return bins}
+ const api={counts,units};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.PermitYears=api;
+})(globalThis);

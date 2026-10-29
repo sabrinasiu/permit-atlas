@@ -1,0 +1,164 @@
+[
+  {
+    "file": "iterations/01-permit-descriptions-preview.jpg",
+    "original_filename": "permit-descriptions-preview.png",
+    "captured_at_file_timestamp": "2026-10-27T10:19:53.026922-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/02-permit-atlas-illustrated-preview.jpg",
+    "original_filename": "permit-atlas-illustrated-preview.png",
+    "captured_at_file_timestamp": "2026-10-27T13:27:27.046817-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/03-permit-atlas-map-first-preview.jpg",
+    "original_filename": "permit-atlas-map-first-preview.png",
+    "captured_at_file_timestamp": "2026-10-27T13:33:30.080908-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/04-permit-atlas-simple-map-preview.jpg",
+    "original_filename": "permit-atlas-simple-map-preview.png",
+    "captured_at_file_timestamp": "2026-10-27T13:35:57.984227-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/05-permit-atlas-clean-vector-preview.jpg",
+    "original_filename": "permit-atlas-clean-vector-preview.png",
+    "captured_at_file_timestamp": "2026-10-27T13:43:06.852128-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/06-permit-atlas-colors-preview.jpg",
+    "original_filename": "permit-atlas-colors-preview.png",
+    "captured_at_file_timestamp": "2026-10-27T13:44:18.052758-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/07-permit-atlas-brighter-colors-preview.jpg",
+    "original_filename": "permit-atlas-brighter-colors-preview.png",
+    "captured_at_file_timestamp": "2026-10-27T13:45:41.525867-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/08-permit-atlas-no-mayor-preview.jpg",
+    "original_filename": "permit-atlas-no-mayor-preview.png",
+    "captured_at_file_timestamp": "2026-10-27T13:50:12.732445-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/09-permit-atlas-timeline-preview.jpg",
+    "original_filename": "permit-atlas-timeline-preview.png",
+    "captured_at_file_timestamp": "2026-10-27T14:06:58.410337-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/10-permit-progress-heatmap.jpg",
+    "original_filename": "permit-progress-heatmap.png",
+    "captured_at_file_timestamp": "2026-10-27T14:41:54.146215-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/11-permit-daily-counts.jpg",
+    "original_filename": "permit-daily-counts.png",
+    "captured_at_file_timestamp": "2026-10-27T14:47:39.599559-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/12-permit-map-no-banner.jpg",
+    "original_filename": "permit-map-no-banner.png",
+    "captured_at_file_timestamp": "2026-10-27T14:49:22.757017-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/13-permit-persistent-orange.jpg",
+    "original_filename": "permit-persistent-orange.png",
+    "captured_at_file_timestamp": "2026-10-27T14:51:20.821374-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/14-permit-issued-only.jpg",
+    "original_filename": "permit-issued-only.png",
+    "captured_at_file_timestamp": "2026-10-27T14:54:17.480388-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/15-permit-issuance-map.jpg",
+    "original_filename": "permit-issuance-map.png",
+    "captured_at_file_timestamp": "2026-10-27T14:55:37.506252-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/16-permit-mayor-timeline.jpg",
+    "original_filename": "permit-mayor-timeline.png",
+    "captured_at_file_timestamp": "2026-10-27T15:00:26.662322-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/17-permit-new-construction-layers.jpg",
+    "original_filename": "permit-new-construction-layers.png",
+    "captured_at_file_timestamp": "2026-10-27T15:02:20.973428-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/18-permit-merged-overlay.jpg",
+    "original_filename": "permit-merged-overlay.png",
+    "captured_at_file_timestamp": "2026-10-27T15:04:39.150997-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/19-new-construction-tracker.jpg",
+    "original_filename": "new-construction-tracker.png",
+    "captured_at_file_timestamp": "2026-10-27T15:06:15.606142-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/20-new-construction-tracker-search-only.jpg",
+    "original_filename": "new-construction-tracker-search-only.png",
+    "captured_at_file_timestamp": "2026-10-27T15:20:01.355695-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/21-new-construction-unit-colors.jpg",
+    "original_filename": "new-construction-unit-colors.png",
+    "captured_at_file_timestamp": "2026-10-28T12:26:33.974460-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/22-new-construction-painted-marks.jpg",
+    "original_filename": "new-construction-painted-marks.png",
+    "captured_at_file_timestamp": "2026-10-28T12:31:21.354688-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/23-new-construction-affordable-orange.jpg",
+    "original_filename": "new-construction-affordable-orange.png",
+    "captured_at_file_timestamp": "2026-10-28T13:00:43.792058-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/24-new-construction-yearly-bars.jpg",
+    "original_filename": "new-construction-yearly-bars.png",
+    "captured_at_file_timestamp": "2026-10-28T14:27:48.438167-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/25-new-construction-breed-through-2024.jpg",
+    "original_filename": "new-construction-breed-through-2024.png",
+    "captured_at_file_timestamp": "2026-10-28T14:32:12.403478-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/26-new-construction-neighborhood-block-label.jpg",
+    "original_filename": "new-construction-neighborhood-block-label.png",
+    "captured_at_file_timestamp": "2026-10-28T14:34:44.503859-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/27-new-construction-build-site-units.jpg",
+    "original_filename": "new-construction-build-site-units.png",
+    "captured_at_file_timestamp": "2026-10-28T14:45:14.242326-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  }
+]
