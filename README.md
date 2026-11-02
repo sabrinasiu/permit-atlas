@@ -68,10 +68,22 @@ The mayor's total and annual bar graph now sum reported proposed housing units, 
 
 ## Build sites and units per build record
 
-The mayoral panel shows separate build-site and proposed-unit totals. The default By build site view lists anonymous sites with each associated permit's housing-unit count and issue date; By year retains the annual proposed-unit chart. The units total is explicitly labeled units in permit records. It is not a fully deduplicated physical dwelling inventory.
+The mayoral panel shows separate build-site and proposed-unit totals. The By build site view lists anonymous sites with each associated permit's housing-unit count and issue date; By year retains the annual proposed-unit chart. The units total is explicitly labeled units in permit records. It is not a fully deduplicated physical dwelling inventory.
 
 `build-sites.json` groups permits by exact primary parcel, street number/suffix/name/suffix, excluding unit identifiers. Raw address fields are used only in private preparation, and only opaque site IDs are published. This produces 1,737 site identities for 1,803 permits across the saved cohort; per-term grouping may differ. Site identities do not prove a one-to-one relationship to physical buildings. Repeated permits at one site remain visible with their individual counts rather than being assumed to add distinct homes. No unsupported unique-unit sum is inferred for a multi-permit site. Unknown and nonresidential unit counts remain explicit.
 
 ## Screenshot history
 
 [Browse screenshots by commit and development iteration](screenshots/README.md). Historical commit images are representative original captures; the latest version includes direct overview, annual-unit and build-site-detail captures.
+
+## Nested home-size donut
+
+By home size is available beneath the mayor selector; Over time is the initial view. Categories are 1 unit, 2 units, 3–4 units, 5–19 units, 20–49 units, 50–99 units and 100+ units. The inner ring measures the number of build sites in each category; the outer ring sums the actual proposed housing units of the sites within each group. Group boundaries are never substituted for actual unit counts. Each ring has its own denominator. The scrollable key gives both exact numbers, and hover, focus or selection highlights a category in both rings. The chart follows the mayor and neighborhood filters.
+
+A site contributes once if every selected permit at that site is residential and reports the same positive integer unit count. Conflicting, unknown, zero and nonresidential site records are excluded and counted in the chart note. Repeated agreeing permits are not added together. This is an explicit site-level proxy, not proof of separate physical buildings or unique completed dwellings. The key uses descriptive names (Single-unit homes, Duplexes, Small multifamily, Small/Medium/Large apartment buildings, Very large developments), with numeric ranges shown underneath. These are unit-count labels, not verified building types. The donut totals therefore differ from the header and annual chart, which retain their per-permit definitions. Sites may appear in more than one mayoral period when they have permits in both.
+
+## Home sizes over time
+
+Annual home-size trends use the same qualifying sites as the donut, grouped by the earliest issued permit at the site within the selected mayoral reporting period. A site contributes once across the whole period, even when repeated permits occur in different years. All qualifying selected records must agree on a positive residential unit count; conflicting, unknown, zero and nonresidential sites are excluded. The unit series sums actual reported units, not category endpoints. A site can occur under more than one mayor if it had permits in both terms. These are issuance-year trends in proposed sites and units, not construction-start or completion counts. Partial boundary years and the snapshot year are marked.
+
+The Over time view draws one line for each of the seven home types. Build sites / Housing units switches the shared zero-based vertical axis between counts. Hover or keyboard-focus a point for an exact year/type/count; hover or focus a legend item to isolate its line. All years in the mayoral reporting period remain visible, including zero years. Distinct line colors and dash patterns identify home types.

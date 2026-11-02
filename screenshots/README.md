@@ -1,6 +1,6 @@
 # Screenshot history
 
-27 original development screenshots, organized chronologically, plus a screenshot folder for each of the three prior commits and the current version. The historical commit folders use the closest saved screenshot taken before each commit; they are clearly labeled representative and are not verified exact renders. Recreating historical versions was blocked by the managed browser policy. The current folder contains three direct browser captures.
+32 original development screenshots, organized chronologically, plus a screenshot folder for each prior commit and the current version. The historical commit folders use the closest saved screenshot taken before each commit; they are clearly labeled representative and are not verified exact renders. Recreating historical versions was blocked by the managed browser policy. The build-site folder contains three direct browser captures; the newest chart folder contains representative captures from before panel-outline removal.
 
 ## By commit
 
@@ -8,6 +8,8 @@
 - [ce8bdb6 — Add daily issuance heat map and inspection milestone histories](commits/02-ce8bdb6/README.md)
 - [841c8f8 — Refine New Construction Tracker with mayoral term filtering](commits/03-841c8f8/README.md)
 - [Current version — build sites and unit breakdowns](commits/04-build-sites-and-unit-breakdowns/README.md)
+
+- [Home-type charts and floating panels](commits/05-home-type-charts/README.md) — representative captures before outline removal
 
 ## Original iterations
 
@@ -40,6 +42,15 @@ File timestamps below preserve the original local screenshot modification times 
 25. [new construction breed through 2024](iterations/25-new-construction-breed-through-2024.jpg) — 2026-10-28T14:32:12.403478-07:00
 26. [new construction neighborhood block label](iterations/26-new-construction-neighborhood-block-label.jpg) — 2026-10-28T14:34:44.503859-07:00
 27. [new construction build site units](iterations/27-new-construction-build-site-units.jpg) — 2026-10-28T14:45:14.242326-07:00
+
+28. [new construction home size donut](iterations/28-new-construction-home-size-donut.jpg) — 2026-10-28T20:21:01.288312-07:00
+
+29. [new construction grouped donut](iterations/29-new-construction-grouped-donut.jpg) — 2026-10-29T06:10:15.456334-07:00
+
+30. [new construction named groups](iterations/30-new-construction-named-groups.jpg) — 2026-10-29T06:23:12.297318-07:00
+
+31. [Home types over time — sites](iterations/31-home-types-over-time-sites.jpg) — 2026-10-29T06:33:34.449808-07:00
+32. [Home types over time — units](iterations/32-home-types-over-time-units.jpg) — 2026-10-29T06:33:33.741439-07:00
 
 `manifest.json` maps commits to images; `iterations/index.json` records original filenames, timestamps and provenance. Basemap tiles require the external map service and may change independently of the app code.
 

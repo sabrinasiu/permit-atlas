@@ -160,5 +160,35 @@
     "original_filename": "new-construction-build-site-units.png",
     "captured_at_file_timestamp": "2026-10-28T14:45:14.242326-07:00",
     "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/28-new-construction-home-size-donut.jpg",
+    "original_filename": "new-construction-home-size-donut.jpg",
+    "captured_at_file_timestamp": "2026-10-28T20:21:01.288312-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/29-new-construction-grouped-donut.jpg",
+    "original_filename": "new-construction-grouped-donut.jpg",
+    "captured_at_file_timestamp": "2026-10-29T06:10:15.456334-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/30-new-construction-named-groups.jpg",
+    "original_filename": "new-construction-named-groups.jpg",
+    "captured_at_file_timestamp": "2026-10-29T06:23:12.297318-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/31-home-types-over-time-sites.jpg",
+    "original_filename": "home-types-over-time-sites.jpg",
+    "captured_at_file_timestamp": "2026-10-29T06:33:34.449808-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state. London Breed selected."
+  },
+  {
+    "file": "iterations/32-home-types-over-time-units.jpg",
+    "original_filename": "home-types-over-time-units.jpg",
+    "captured_at_file_timestamp": "2026-10-29T06:33:33.741439-07:00",
+    "provenance": "Original screenshot captured during development; not necessarily a committed state. London Breed selected."
   }
 ]

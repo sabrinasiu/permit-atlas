@@ -32,5 +32,14 @@
       "commits/04-build-sites-and-unit-breakdowns/build-site-detail.jpg"
     ],
     "provenance": "Direct browser captures of the working version bundled in this commit, October 28, 2026. Daniel Lurie selected, all neighborhoods."
+  },
+  {
+    "commit_reference": "The commit introducing this folder; resolve with git log --diff-filter=A -- screenshots/commits/05-home-type-charts/README.md",
+    "title": "Home-type donut and annual trends with borderless floating panels",
+    "screenshots": [
+      "commits/05-home-type-charts/sites-representative.jpg",
+      "commits/05-home-type-charts/units-representative.jpg"
+    ],
+    "provenance": "Original October 29, 2026 chart captures, before the panel-outline removal; representative, not an exact render of the final commit."
   }
 ]
