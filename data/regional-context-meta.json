@@ -1,0 +1,43 @@
+{
+  "retrieved": "2026-11-04",
+  "bbox": [
+    -122.75,
+    37.45,
+    -122.05,
+    38.1
+  ],
+  "land_source": "https://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-land/",
+  "road_source": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Transportation/MapServer",
+  "note": "Generalized world land; detailed Bay Area coastline and Census roads within bbox. Context only; no expanded permit or transit coverage.",
+  "roads": 45680,
+  "places": [
+    {
+      "name": "Berkeley",
+      "coordinates": [
+        -122.271152,
+        37.873901
+      ]
+    },
+    {
+      "name": "San Mateo",
+      "coordinates": [
+        -122.303214,
+        37.540554
+      ]
+    },
+    {
+      "name": "Oakland",
+      "coordinates": [
+        -122.278038,
+        37.804725
+      ]
+    },
+    {
+      "name": "San Francisco",
+      "coordinates": [
+        -122.3996,
+        37.784263
+      ]
+    }
+  ]
+}

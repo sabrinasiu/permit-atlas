@@ -1,0 +1,6 @@
+{
+  "source": "https://data.sf.gov/Geographic-Locations-and-Boundaries/Streets-Active-and-Retired/3psu-pn9h",
+  "retrieved": "2026-11-04",
+  "features": 16378,
+  "note": "Active street centerlines only; names and class codes retained, address fields omitted."
+}

@@ -49,5 +49,15 @@
       "commits/06-neighborhood-focus-and-legend-filters/neighborhood-search.jpg"
     ],
     "provenance": "Direct browser capture of this working version, November 4, 2026. Hayes Valley selected with search input focused. Basemap tiles unavailable during capture."
+  },
+  {
+    "commit_reference": "The commit introducing this folder; resolve with git log --diff-filter=A -- screenshots/commits/07-travel-range-and-context/README.md",
+    "title": "Travel-range sidebar, local grayscale maps, filing-year hover cards and smooth zoom",
+    "screenshots": [
+      "commits/07-travel-range-and-context/overview.jpg",
+      "commits/07-travel-range-and-context/regional-context-representative.jpg",
+      "commits/07-travel-range-and-context/permit-hover-representative.jpg"
+    ],
+    "provenance": "Overview is a direct capture of this version. Supporting regional and tooltip captures precede the final zoom change and are labeled representative."
   }
 ]

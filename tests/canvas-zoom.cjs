@@ -1,0 +1,7 @@
+const assert=require('node:assert/strict'),Z=require('../canvas-zoom');
+class Point{constructor(x,y){this.x=x;this.y=y}subtract(p){return new Point(this.x-p.x,this.y-p.y)}add(p){return new Point(this.x+p.x,this.y+p.y)}divideBy(n){return new Point(this.x/n,this.y/n)}}
+const handlers={},canvas={},layer={},map={getZoom:()=>2,getCenter:()=>({lat:10,lng:20}),getSize:()=>new Point(800,600),containerPointToLatLng:()=>({lat:85,lng:-80}),project:(p,z)=>new Point(p.lng*2**z,-p.lat*2**z),getZoomScale:(z,from)=>2**(z-from),containerPointToLayerPoint:p=>new Point(p.x+30,p.y-20),on:(names,fn)=>{handlers[names]=fn},off:(names,fn)=>{assert.equal(fn,handlers[names]);delete handlers[names]}};
+global.L={DomUtil:{setTransform:(element,position,scale)=>{element.position=position;element.scale=scale}}};Z.bind(layer,map,[canvas]);Z.rendered(layer,map);
+handlers['zoomanim zoom']({zoom:2.5,center:{lat:10,lng:20}});assert.equal(canvas.scale,Math.SQRT2);assert.ok(Math.abs(400*canvas.scale+canvas.position.x-430)<1e-8);assert.ok(Math.abs(300*canvas.scale+canvas.position.y-280)<1e-8);
+handlers['zoomanim zoom']({zoom:1.5,center:{lat:11,lng:21}});const expected=map.project({lat:10,lng:20},1.5).subtract(map.project({lat:11,lng:21},1.5)).add(new Point(430,280));assert.ok(Math.abs(400*canvas.scale+canvas.position.x-expected.x)<1e-8);assert.ok(Math.abs(300*canvas.scale+canvas.position.y-expected.y)<1e-8);Z.unbind(layer,map);assert.equal(Object.keys(handlers).length,0);
+console.log('Passed fractional zoom-in/out transforms, center anchoring, panned layer offsets and cleanup.');

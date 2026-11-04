@@ -262,5 +262,71 @@
     "original_filename": "tracker-search-no-outline.jpg",
     "captured_at_file_timestamp": "2026-11-04T12:52:22.163473-08:00",
     "provenance": "Original development capture verifying the search input has no outline while typing."
+  },
+  {
+    "file": "iterations/45-tracker-sidebar.jpg",
+    "original_filename": "tracker-sidebar.jpg",
+    "captured_at_file_timestamp": "2026-11-04T14:04:25.453291-08:00",
+    "provenance": "Direct development capture of docked sidebar layout, Hayes Valley in 2026. Basemap tiles unavailable during capture."
+  },
+  {
+    "file": "iterations/46-tracker-sidebar-permit-history.jpg",
+    "original_filename": "tracker-sidebar-permit-history.jpg",
+    "captured_at_file_timestamp": "2026-11-04T14:04:24.470252-08:00",
+    "provenance": "Direct development capture of docked sidebar layout, Hayes Valley in 2026. Basemap tiles unavailable during capture."
+  },
+  {
+    "file": "iterations/47-tracker-travel-range-transit.jpg",
+    "original_filename": "tracker-travel-range-transit.jpg",
+    "captured_at_file_timestamp": "2026-11-04T14:18:10.315546-08:00",
+    "provenance": "Direct browser capture comparing 30-minute walking and scheduled Muni ranges from the same sample point, November 4, 2026 at 09:00 SF time. Basemap tiles unavailable during capture."
+  },
+  {
+    "file": "iterations/48-tracker-travel-range-walking.jpg",
+    "original_filename": "tracker-travel-range-walking.jpg",
+    "captured_at_file_timestamp": "2026-11-04T14:18:20.518339-08:00",
+    "provenance": "Direct browser capture comparing 30-minute walking and scheduled Muni ranges from the same sample point, November 4, 2026 at 09:00 SF time. Basemap tiles unavailable during capture."
+  },
+  {
+    "file": "iterations/49-tracker-no-mayor-controls.jpg",
+    "original_filename": "tracker-no-mayor-controls.jpg",
+    "captured_at_file_timestamp": "2026-11-04T14:26:21.543041-08:00",
+    "provenance": "Direct browser capture after removing mayor and permit-year controls; map uses all bundled permit years. Basemap tiles unavailable during capture."
+  },
+  {
+    "file": "iterations/50-tracker-draggable-travel-range.jpg",
+    "original_filename": "tracker-draggable-travel-range.jpg",
+    "captured_at_file_timestamp": "2026-11-04T14:31:36.804779-08:00",
+    "provenance": "Direct browser capture after marker and shaded-area dragging; recalculated travel range and full-history housing counts. Basemap tiles unavailable during capture."
+  },
+  {
+    "file": "iterations/51-tracker-travel-gray-surroundings.jpg",
+    "original_filename": "tracker-travel-gray-surroundings.jpg",
+    "captured_at_file_timestamp": "2026-11-04T14:53:16.119682-08:00",
+    "provenance": "Direct browser capture of gray outside mask following travel-range drag, in the current narrow viewport. Basemap tiles unavailable during capture."
+  },
+  {
+    "file": "iterations/52-tracker-pale-travel-lens.jpg",
+    "original_filename": "tracker-pale-travel-lens.jpg",
+    "captured_at_file_timestamp": "2026-11-04T14:58:52.275088-08:00",
+    "provenance": "Direct browser capture of the pale local street map, dotted travel boundary and colored construction marks only within a 15-minute walking estimate."
+  },
+  {
+    "file": "iterations/53-tracker-grayscale-regional-context.jpg",
+    "original_filename": "tracker-grayscale-regional-context.jpg",
+    "captured_at_file_timestamp": "2026-11-04T15:20:20.322579-08:00",
+    "provenance": "Direct browser capture of bundled surrounding grayscale geography and permit hover-card iteration; high-rise tooltip example uses 175 proposed units and the actual 2025 filing year."
+  },
+  {
+    "file": "iterations/54-tracker-permit-hover-details.jpg",
+    "original_filename": "tracker-permit-hover-details.jpg",
+    "captured_at_file_timestamp": "2026-11-04T15:22:21.896345-08:00",
+    "provenance": "Direct browser capture of bundled surrounding grayscale geography and permit hover-card iteration; high-rise tooltip example uses 175 proposed units and the actual 2025 filing year."
+  },
+  {
+    "file": "iterations/55-tracker-smooth-zoom.jpg",
+    "original_filename": "tracker-smooth-zoom.jpg",
+    "captured_at_file_timestamp": "2026-11-04T15:29:41.530899-08:00",
+    "provenance": "Direct browser capture of the current tracker after fractional zoom-in/out verification, with a 15-minute walking lens."
   }
 ]

@@ -1,0 +1,15 @@
+{
+  "agency": "SFMTA / Muni",
+  "source": "https://data.sf.gov/Transportation/SFMTA-General-Transit-Feed-Specification-GTFS-Prod/dni7-qpv3",
+  "filename": "SFMTA_GTFS_20260829_20270115v2.zip",
+  "retrieved": "2026-11-04",
+  "sha256": "533768f351d72ac647c468dc00a5004f61f2e11bc3706d862b914cc0f85fc0b0",
+  "start": "20260829",
+  "end": "20270115",
+  "timezone": "America/Los_Angeles",
+  "walking": "150 m land grid; 4.5 km/h; not a pedestrian street network",
+  "boarding_buffer_seconds": 60,
+  "max_rides": 3,
+  "routes": 68,
+  "trips": 34668
+}

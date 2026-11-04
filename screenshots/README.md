@@ -1,6 +1,6 @@
 # Screenshot history
 
-44 original development screenshots, organized chronologically, plus a screenshot folder for each prior commit and the current version. The historical commit folders use the closest saved screenshot taken before each commit; they are clearly labeled representative and are not verified exact renders. Recreating historical versions was blocked by the managed browser policy. The build-site folder contains three direct browser captures; the newest chart folder contains representative captures from before panel-outline removal.
+55 original development screenshots, organized chronologically, plus a screenshot folder for each prior commit and the current version. The historical commit folders use the closest saved screenshot taken before each commit; they are clearly labeled representative and are not verified exact renders. Recreating historical versions was blocked by the managed browser policy. The build-site folder contains three direct browser captures; the newest chart folder contains representative captures from before panel-outline removal.
 
 ## By commit
 
@@ -12,6 +12,8 @@
 - [Home-type charts and floating panels](commits/05-home-type-charts/README.md) — representative captures before outline removal
 
 - [Neighborhood focus and legend filters](commits/06-neighborhood-focus-and-legend-filters/README.md) — direct browser capture
+
+- [Travel ranges, grayscale geography and permit hover cards](commits/07-travel-range-and-context/README.md) — current overview plus labeled supporting captures
 
 ## Original iterations
 
@@ -72,6 +74,25 @@ File timestamps below preserve the original local screenshot modification times 
 43. [tracker neighborhood focus](iterations/43-tracker-neighborhood-focus.jpg) — 2026-11-04T12:22:09.128031-08:00
 
 44. [tracker search without outline](iterations/44-tracker-search-no-outline.jpg) — 2026-11-04T12:52:22.163473-08:00
+
+45. [tracker sidebar](iterations/45-tracker-sidebar.jpg) — 2026-11-04T14:04:25.453291-08:00
+46. [tracker sidebar permit history](iterations/46-tracker-sidebar-permit-history.jpg) — 2026-11-04T14:04:24.470252-08:00
+
+47. [tracker travel range transit](iterations/47-tracker-travel-range-transit.jpg) — 2026-11-04T14:18:10.315546-08:00
+48. [tracker travel range walking](iterations/48-tracker-travel-range-walking.jpg) — 2026-11-04T14:18:20.518339-08:00
+
+49. [tracker without mayor controls](iterations/49-tracker-no-mayor-controls.jpg) — 2026-11-04T14:26:21.543041-08:00
+
+50. [draggable travel range](iterations/50-tracker-draggable-travel-range.jpg) — 2026-11-04T14:31:36.804779-08:00
+
+51. [gray travel-range surroundings](iterations/51-tracker-travel-gray-surroundings.jpg) — 2026-11-04T14:53:16.119682-08:00
+
+52. [pale street map and travel lens](iterations/52-tracker-pale-travel-lens.jpg) — 2026-11-04T14:58:52.275088-08:00
+
+53. [tracker grayscale regional context](iterations/53-tracker-grayscale-regional-context.jpg) — 2026-11-04T15:20:20.322579-08:00
+54. [tracker permit hover details](iterations/54-tracker-permit-hover-details.jpg) — 2026-11-04T15:22:21.896345-08:00
+
+55. [smooth zoom and current tracker](iterations/55-tracker-smooth-zoom.jpg) — 2026-11-04T15:29:41.530899-08:00
 
 `manifest.json` maps commits to images; `iterations/index.json` records original filenames, timestamps and provenance. Basemap tiles require the external map service and may change independently of the app code.
 

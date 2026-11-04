@@ -1,0 +1,5 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+const app=fs.readFileSync(require('node:path').join(__dirname,'../app.js'),'utf8'),html=fs.readFileSync(require('node:path').join(__dirname,'../index.html'),'utf8');
+const ctx={meta:{since:'2011-01-11',through:'2026-10-27'},selectedLegendType:null,filtered:[{_key:'old',_issuedDay:'2011-02-01'},{_key:'middle',_issuedDay:'2019-03-01'},{_key:'recent',_issuedDay:'2026-10-01'},{_key:'future',_issuedDay:'2027-01-01'}],blockGroups:new Map(),validPoint:()=>true};
+vm.createContext(ctx);vm.runInContext(app.slice(app.indexOf('function timelinePeriod('),app.indexOf('function updateLegendSelection(')),ctx);ctx.rebuildMapGroups();assert.deepEqual([...ctx.blockGroups.keys()],['old','middle','recent']);assert.equal(ctx.mapPeriod().start,'2011-01-11');assert.equal(ctx.mapPeriod().end,'2026-10-27');assert.ok(!html.includes('id="mayorBlocks"'));assert.ok(!html.includes('id="mayorYears"'));assert.ok(!app.includes('selectedMayor'));assert.ok(!app.includes('selectedYear'));
+console.log('Passed full-history map coverage and removal of mayor/year filters.');

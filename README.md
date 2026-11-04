@@ -110,8 +110,68 @@ The main palette uses #053161 navy for text, #BED9DA pale blue for button backgr
 
 ## Neighborhood zoom
 
-Searching a neighborhood fits the map to its DataSF analysis-neighborhood shape, outlines the selected area, and mutes everything outside it with a non-interactive overlay. The bundled [DataSF Analysis Neighborhoods](https://data.sf.gov/Geographic-Locations-and-Boundaries/Analysis-Neighborhoods/p5b7-5n3h) GeoJSON contains 41 census-tract-based analysis areas, retrieved November 4, 2026; these are not codified neighborhood boundaries. Polygon holes and disconnected areas are preserved. The highlight persists across year and home-type changes; clearing the search removes it and returns to the city overview. Exact names take precedence over partial matches (Mission excludes Mission Bay); partial queries highlight and fit the combined matching areas. If boundary loading fails, zoom bounds fall back to all bundled permit locations across the full history and all permit types. Padding accounts for the legend and bottom controls. Unknown queries clear the highlight and leave the camera in place. Mayor/year buttons share the overlay’s system font and pill styling. Regression coverage: `node tests/neighborhood-search.cjs` and `node tests/neighborhood-focus.cjs`.
+Searching a neighborhood fits the map to its DataSF analysis-neighborhood shape, outlines the selected area, and mutes everything outside it with a non-interactive overlay. The bundled [DataSF Analysis Neighborhoods](https://data.sf.gov/Geographic-Locations-and-Boundaries/Analysis-Neighborhoods/p5b7-5n3h) GeoJSON contains 41 census-tract-based analysis areas, retrieved November 4, 2026; these are not codified neighborhood boundaries. Polygon holes and disconnected areas are preserved. The highlight persists across year and home-type changes; clearing the search removes it and returns to the city overview. Exact names take precedence over partial matches (Mission excludes Mission Bay); partial queries highlight and fit the combined matching areas. If boundary loading fails, zoom bounds fall back to all bundled permit locations across the full history and all permit types. The map occupies the space beside the sidebar; neighborhood fitting uses even padding within that unobstructed map area. Unknown queries clear the highlight and leave the camera in place. Mayor/year buttons share the overlay’s system font and pill styling. Regression coverage: `node tests/neighborhood-search.cjs` and `node tests/neighborhood-focus.cjs`.
 
 ## Interactive home-type legend
 
 Legend rows are keyboard-accessible toggle buttons. Selecting a home type isolates that category on the map and updates the annual permit labels/caption. The affordable-housing row selects identified affordable projects; selecting a size category still includes affordable projects within that size. Clicking outside the legend clears the temporary type filter before the clicked control or map area acts, preserving the current mayor, year and neighborhood. Clicking the selected row again or pressing Escape inside the legend also clears it. Full-term charts retain their existing cohort. Browser verification: Breed 2020 changes from 70 permits to 5 identified-affordable or 21 single-unit permits, then returns to 70 on an outside click. Regression coverage: `node tests/legend-filter.cjs`.
+
+
+## Docked exploration sidebar
+
+Search, mayor and annual filters, home-type legend, permit history, data status and refresh now live in a fixed left sidebar, inspired by Morphocode Explorer’s map-and-panel layout. Charts expand inline with an accessible expanded/collapsed control rather than opening a modal. Term chart headings and totals update as filters change. Permit clicks replace the legend in the sidebar; clicking blank map restores it. The sidebar scrolls independently, with search pinned at its top. The map occupies the remaining width with no control cards over it. On screens up to 600px wide, the map sits above a scrollable details panel.
+
+Browser-verified Lurie 2025/2026 navigation, inline chart expansion/collapse, Hayes Valley highlighting, and a permit click followed by blank-map dismissal. Basemap tiles were unavailable during these captures.
+
+
+## Walking and scheduled Muni travel ranges
+
+The sidebar’s Travel range tool lets viewers pick a starting point, a 15/30/45/60 minute budget, a departure date/time in America/Los_Angeles, and walking-only or walking + Muni. It shades reachable grid cells and mutes construction marks outside the range. The count follows the current mayor, year, neighborhood and home-type selection; build sites are deduplicated, and reported proposed units use the existing consistent-residential-site rules. Unknown/conflicting units are excluded from the unit total. Permit locations remain approximate. Clear removes the origin, range and temporary muting. Origin coordinates stay in browser memory and are not sent to an external routing API.
+
+The bundled [SFMTA GTFS production snapshot](https://data.sf.gov/Transportation/SFMTA-General-Transit-Feed-Specification-GTFS-Prod/dni7-qpv3), `SFMTA_GTFS_20260829_20270115v2.zip`, was retrieved November 4, 2026. It covers August 29, 2026–January 15, 2027 and contains 68 routes and 34,668 scheduled trips. The app restricts departure dates to that period. Service calendars, exceptions, waiting, a one-minute boarding allowance, and up to three vehicle rides (two transfers) are included. After-midnight services can belong to the previous service day. This does not reconstruct historical transit service for earlier mayoral years and does not include BART, Caltrain, ferries or live disruptions.
+
+Walking is an approximate 150 m grid over the bundled analysis-neighborhood land polygons at 4.5 km/h, with eight-direction movement and no diagonal corner-cutting across water. Stops and origins connect to nearby land cells. It is not pedestrian street routing: buildings, path access, bridges, grades, crossings, inland water and other barriers inside neighborhood polygons, and accessibility restrictions are not modeled. Reach boundaries and site inclusion can vary by a grid cell; this is an exploratory estimate, not directions or a guaranteed journey time. A future production version should replace the walking grid with a pedestrian street network and add other regional transit feeds.
+
+`travel-engine.js` runs a bounded-round timetable search and walking relaxation in `travel-worker.js`. The compressed timetable is loaded on demand, processed locally, and kept off the main UI thread. Rebuild the snapshot with `python3 scripts/prepare-transit.py /path/to/SFMTA_GTFS.zip` and verify its metadata before publishing. Regression coverage: `node tests/travel-engine.cjs` checks waiting, transfers, missed boarding, weekday/exception services, after-midnight service, water barriers, feed dates, and a real-data walking/transit comparison. Browser checks cover selecting an origin, changing mode and duration, updating year-specific site counts, and clearing the range.
+
+
+## Mayor and year controls removed
+
+The sidebar no longer contains mayor or permit-year controls. The map and travel-range housing counts now use the full bundled permit history (January 11, 2011–October 27, 2026), subject to neighborhood and home-type filters. Construction charts remain available as a general dataset overview rather than a mayoral-term breakdown. Travel departure date/time remains independent of permit issuance dates. This supersedes the mayor/year navigation behavior documented in earlier iteration notes. Regression: `node tests/all-history.cjs`.
+
+
+## Drag travel ranges
+
+The origin marker and the shaded reachable area can both be dragged. The existing outline translates as a preview while held; releasing moves the origin and recalculates the real scheduled range and housing counts. Pending earlier calculations are invalidated when dragging begins. Map panning is disabled only for a shaded-area drag and restored on release or cancellation; outside-range drags continue to pan the map. Cancelled pointer drags restore the original geometry. Regression: `node tests/travel-drag.cjs`; browser-verified marker and whole-area movement with changed outlines and counts.
+
+
+The active travel range now cuts a clear window through a gray outside mask above the permit marks and basemap. The mask follows the drag preview and recalculated outline, preserves disconnected reachable areas and holes with an even-odd fill, and is removed when the travel range is cleared. It does not intercept map interactions.
+
+
+The gray outside mask was removed at the user’s request. Travel ranges retain the selected-area fill and outline, draggable origin and area, and existing muted permit marks outside the range.
+
+
+## Pale street map and travel lens
+
+The map now follows the supplied Morphocode-style visual reference: pale land, soft gray water, white street lines, sparse muted labels, a dotted charcoal travel boundary, no gray exterior mask, and colored construction marks only within the active reachable area. The calculated travel shape and existing unit/affordability colors remain data-driven. Permit marks are approximate block symbols, not building footprints. With no travel range selected, all matching construction marks remain visible.
+
+The basemap uses bundled analysis-neighborhood land shapes and [DataSF active street centerlines](https://data.sf.gov/Geographic-Locations-and-Boundaries/Streets-Active-and-Retired/3psu-pn9h), retrieved November 4, 2026. `scripts/prepare-streets.py` removes address fields and retired streets and produces the compressed local geometry. Streets and labels render above permit marks so the street grid remains visible. This removes the dependency on external map tiles and fonts for the SF view. The bundled geographic coverage is San Francisco; neighboring cities and detailed park/lake polygons are not included.
+
+
+## Geographic context beyond the permit footprint
+
+The map now has a bundled grayscale regional backdrop beyond San Francisco’s data boundary: generalized world land from [Natural Earth](https://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-land/), detailed regional land geometry, and public [Census TIGERweb roads](https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Transportation/MapServer). The regional road coverage is longitude -122.75 to -122.05, latitude 37.45 to 38.1, encompassing the neighboring Peninsula, Marin and East Bay. Natural Earth city labels provide orientation. Coastlines are generalized context, not parcel boundaries. Beyond the regional rectangle, generalized land remains visible, with no bundled street detail. This supersedes the previous SF-only basemap coverage limitation.
+
+The regional dataset is local and needs no tile service or account key. A direct OpenStreetMap tile background was tested but failed to load in the preview; it was replaced with bundled vector geometry. No OSM tiles were downloaded or archived. The new context does not extend the SF permit dataset or Muni routing coverage. Source metadata is in `data/regional-context-meta.json`; `scripts/prepare-regional-context.py` builds the compressed dataset from the recorded public sources.
+
+
+## Permit hover cards
+
+Hover cards now show a colloquial home/building type, reported proposed units, and the permit’s actual filing year (`filed_date`), rather than issuance year or a year inferred from the permit number. A sidecar snapshot retrieved November 4, 2026 matches all 1,803 existing new-construction permits by exact permit number; live refresh also requests `filed_date`. Missing dates explicitly say the submission year is not recorded. Unit counts are per permit and are not summed across a shared block. Up to four permits are shown separately when a block contains several records, followed by a remaining-record count.
+
+Labels distinguish single-unit homes, duplexes, triplexes, fourplexes, and apartment-building sizes. The display label “High-rise” uses a conservative 12-or-more proposed stories heuristic for residential records beyond the 1–4 unit categories, not a legal height classification. Unit count alone never determines high-rise status. Nonresidential or unknown counts are labeled explicitly. Regression: `node tests/permit-tooltip.cjs` validates type labels, filing versus issuance years, missing values, grouped records and complete sidecar coverage.
+
+
+## Smoother zoom
+
+The map supports quarter-level zoom stops, half-level keyboard/double-click increments, and less sensitive wheel movement with a shorter debounce. The local basemap, regional context and permit canvases remain visible and transform with Leaflet’s zoom animation; expensive geometry redraws happen when the view settles. Basemap layers no longer repaint twice for both zoomend and moveend. `canvas-zoom.js` uses public projection APIs and keeps the canvas anchored through fractional zooms and existing map-pane offsets. Regression: `node tests/canvas-zoom.cjs`; browser checked zooming in and back out without console errors.
