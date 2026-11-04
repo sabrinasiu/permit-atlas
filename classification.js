@@ -1,11 +1,11 @@
 (function(root){
   const categories=[
-    {id:'one',label:'1 unit',min:1,max:1,color:'#b8d9e9'},
-    {id:'small',label:'2–4 units',min:2,max:4,color:'#88bad7'},
-    {id:'medium',label:'5–19 units',min:5,max:19,color:'#5899c0'},
-    {id:'large',label:'20–49 units',min:20,max:49,color:'#327aab'},
-    {id:'larger',label:'50–99 units',min:50,max:99,color:'#205d94'},
-    {id:'largest',label:'100+ units',min:100,max:Infinity,color:'#123c75'},
+    {id:'one',label:'1 unit',min:1,max:1,color:'#BED9DA'},
+    {id:'small',label:'2–4 units',min:2,max:4,color:'#9CBEC8'},
+    {id:'medium',label:'5–19 units',min:5,max:19,color:'#7BA1B4'},
+    {id:'large',label:'20–49 units',min:20,max:49,color:'#567FA0'},
+    {id:'larger',label:'50–99 units',min:50,max:99,color:'#2E5882'},
+    {id:'largest',label:'100+ units',min:100,max:Infinity,color:'#053161'},
     {id:'unknown',label:'Nonresidential / unknown units',color:'#959b9b'}
   ];
   function number(value){if(value===null||value===undefined||String(value).trim()==='')return null;const text=String(value).trim().replace(/,/g,'');if(!/^\d+(\.0+)?$/.test(text))return null;const n=Number(text);return Number.isSafeInteger(n)&&n>=0?n:null}

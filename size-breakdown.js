@@ -1,12 +1,12 @@
 (function(root){
   const categories=[
-    {size:1,label:'Single-unit homes',range:'1 unit',min:1,max:1,color:'#b8d9e9'},
-    {size:2,label:'Duplexes',range:'2 units',min:2,max:2,color:'#9ac7df'},
-    {size:3,label:'Small multifamily',range:'3–4 units',min:3,max:4,color:'#88bad7'},
-    {size:5,label:'Small apartment buildings',range:'5–19 units',min:5,max:19,color:'#5899c0'},
-    {size:20,label:'Medium apartment buildings',range:'20–49 units',min:20,max:49,color:'#327aab'},
-    {size:50,label:'Large apartment buildings',range:'50–99 units',min:50,max:99,color:'#205d94'},
-    {size:100,label:'Very large developments',range:'100+ units',min:100,max:Infinity,color:'#123c75'}
+    {size:1,label:'Single-unit homes',range:'1 unit',min:1,max:1,color:'#BED9DA'},
+    {size:2,label:'Duplexes',range:'2 units',min:2,max:2,color:'#ACCBD1'},
+    {size:3,label:'Small multifamily',range:'3–4 units',min:3,max:4,color:'#9CBEC8'},
+    {size:5,label:'Small apartment buildings',range:'5–19 units',min:5,max:19,color:'#7BA1B4'},
+    {size:20,label:'Medium apartment buildings',range:'20–49 units',min:20,max:49,color:'#567FA0'},
+    {size:50,label:'Large apartment buildings',range:'50–99 units',min:50,max:99,color:'#2E5882'},
+    {size:100,label:'Very large developments',range:'100+ units',min:100,max:Infinity,color:'#053161'}
   ];
   // One site contributes once only when all its selected permit records agree.
   function summarize(records){

@@ -190,5 +190,77 @@
     "original_filename": "home-types-over-time-units.jpg",
     "captured_at_file_timestamp": "2026-10-29T06:33:33.741439-07:00",
     "provenance": "Original screenshot captured during development; not necessarily a committed state. London Breed selected."
+  },
+  {
+    "file": "iterations/33-tracker-frosted-overlays.jpg",
+    "original_filename": "tracker-frosted-overlays.jpg",
+    "captured_at_file_timestamp": "2026-11-04T10:44:00.112153-08:00",
+    "provenance": "Original development capture of frosted overlay styling; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/34-tracker-frosted-modal.jpg",
+    "original_filename": "tracker-frosted-modal.jpg",
+    "captured_at_file_timestamp": "2026-11-04T10:43:59.713835-08:00",
+    "provenance": "Original development capture of frosted overlay styling; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/35-year-filter-fixed-2025.jpg",
+    "original_filename": "year-filter-fixed-2025.jpg",
+    "captured_at_file_timestamp": "2026-11-04T11:09:22.627453-08:00",
+    "provenance": "Original development screenshot verifying Daniel Lurie 2025 selected after the year-click bubbling fix; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/36-year-filter-fixed-2026.jpg",
+    "original_filename": "year-filter-fixed-2026.jpg",
+    "captured_at_file_timestamp": "2026-11-04T11:09:13.812442-08:00",
+    "provenance": "Original development screenshot verifying Daniel Lurie 2026 selected after the year-click bubbling fix; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/37-tracker-main-palette.jpg",
+    "original_filename": "tracker-main-palette.jpg",
+    "captured_at_file_timestamp": "2026-11-04T11:14:49.329979-08:00",
+    "provenance": "Original development screenshot of the navy, pale blue and orange-red palette; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/38-tracker-main-palette-modal.jpg",
+    "original_filename": "tracker-main-palette-modal.jpg",
+    "captured_at_file_timestamp": "2026-11-04T11:15:02.811028-08:00",
+    "provenance": "Original development screenshot of the navy, pale blue and orange-red palette; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/39-tracker-neighborhood-zoom.jpg",
+    "original_filename": "tracker-neighborhood-zoom.jpg",
+    "captured_at_file_timestamp": "2026-11-04T11:26:06.460232-08:00",
+    "provenance": "Original development screenshot of neighborhood zoom and matched mayor/year controls; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/40-tracker-matching-navigation.jpg",
+    "original_filename": "tracker-matching-navigation.jpg",
+    "captured_at_file_timestamp": "2026-11-04T11:26:06.812899-08:00",
+    "provenance": "Original development screenshot of neighborhood zoom and matched mayor/year controls; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/41-tracker-legend-filter-affordable.jpg",
+    "original_filename": "tracker-legend-filter-affordable.jpg",
+    "captured_at_file_timestamp": "2026-11-04T11:33:31.863264-08:00",
+    "provenance": "Original development screenshot verifying temporary home-type legend filtering, London Breed 2020; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/42-tracker-legend-filter-restored.jpg",
+    "original_filename": "tracker-legend-filter-restored.jpg",
+    "captured_at_file_timestamp": "2026-11-04T11:33:42.123499-08:00",
+    "provenance": "Original development screenshot verifying temporary home-type legend filtering, London Breed 2020; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/43-tracker-neighborhood-focus.jpg",
+    "original_filename": "tracker-neighborhood-focus.jpg",
+    "captured_at_file_timestamp": "2026-11-04T12:22:09.128031-08:00",
+    "provenance": "Original development screenshot verifying Hayes Valley neighborhood highlighting and outside muting, Daniel Lurie 2026; not necessarily a committed state."
+  },
+  {
+    "file": "iterations/44-tracker-search-no-outline.jpg",
+    "original_filename": "tracker-search-no-outline.jpg",
+    "captured_at_file_timestamp": "2026-11-04T12:52:22.163473-08:00",
+    "provenance": "Original development capture verifying the search input has no outline while typing."
   }
 ]

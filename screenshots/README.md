@@ -1,6 +1,6 @@
 # Screenshot history
 
-32 original development screenshots, organized chronologically, plus a screenshot folder for each prior commit and the current version. The historical commit folders use the closest saved screenshot taken before each commit; they are clearly labeled representative and are not verified exact renders. Recreating historical versions was blocked by the managed browser policy. The build-site folder contains three direct browser captures; the newest chart folder contains representative captures from before panel-outline removal.
+44 original development screenshots, organized chronologically, plus a screenshot folder for each prior commit and the current version. The historical commit folders use the closest saved screenshot taken before each commit; they are clearly labeled representative and are not verified exact renders. Recreating historical versions was blocked by the managed browser policy. The build-site folder contains three direct browser captures; the newest chart folder contains representative captures from before panel-outline removal.
 
 ## By commit
 
@@ -10,6 +10,8 @@
 - [Current version — build sites and unit breakdowns](commits/04-build-sites-and-unit-breakdowns/README.md)
 
 - [Home-type charts and floating panels](commits/05-home-type-charts/README.md) — representative captures before outline removal
+
+- [Neighborhood focus and legend filters](commits/06-neighborhood-focus-and-legend-filters/README.md) — direct browser capture
 
 ## Original iterations
 
@@ -51,6 +53,25 @@ File timestamps below preserve the original local screenshot modification times 
 
 31. [Home types over time — sites](iterations/31-home-types-over-time-sites.jpg) — 2026-10-29T06:33:34.449808-07:00
 32. [Home types over time — units](iterations/32-home-types-over-time-units.jpg) — 2026-10-29T06:33:33.741439-07:00
+
+33. [tracker frosted overlays](iterations/33-tracker-frosted-overlays.jpg) — 2026-11-04T10:44:00.112153-08:00
+34. [tracker frosted modal](iterations/34-tracker-frosted-modal.jpg) — 2026-11-04T10:43:59.713835-08:00
+
+35. [Year selection fixed — 2025](iterations/35-year-filter-fixed-2025.jpg) — 2026-11-04T11:09:22.627453-08:00
+36. [Year selection fixed — 2026](iterations/36-year-filter-fixed-2026.jpg) — 2026-11-04T11:09:13.812442-08:00
+
+37. [tracker main palette](iterations/37-tracker-main-palette.jpg) — 2026-11-04T11:14:49.329979-08:00
+38. [tracker main palette modal](iterations/38-tracker-main-palette-modal.jpg) — 2026-11-04T11:15:02.811028-08:00
+
+39. [tracker neighborhood zoom](iterations/39-tracker-neighborhood-zoom.jpg) — 2026-11-04T11:26:06.460232-08:00
+40. [tracker matching navigation](iterations/40-tracker-matching-navigation.jpg) — 2026-11-04T11:26:06.812899-08:00
+
+41. [tracker legend filter affordable](iterations/41-tracker-legend-filter-affordable.jpg) — 2026-11-04T11:33:31.863264-08:00
+42. [tracker legend filter restored](iterations/42-tracker-legend-filter-restored.jpg) — 2026-11-04T11:33:42.123499-08:00
+
+43. [tracker neighborhood focus](iterations/43-tracker-neighborhood-focus.jpg) — 2026-11-04T12:22:09.128031-08:00
+
+44. [tracker search without outline](iterations/44-tracker-search-no-outline.jpg) — 2026-11-04T12:52:22.163473-08:00
 
 `manifest.json` maps commits to images; `iterations/index.json` records original filenames, timestamps and provenance. Basemap tiles require the external map service and may change independently of the app code.
 

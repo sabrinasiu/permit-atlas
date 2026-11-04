@@ -41,5 +41,13 @@
       "commits/05-home-type-charts/units-representative.jpg"
     ],
     "provenance": "Original October 29, 2026 chart captures, before the panel-outline removal; representative, not an exact render of the final commit."
+  },
+  {
+    "commit_reference": "The commit introducing this folder; resolve with git log --diff-filter=A -- screenshots/commits/06-neighborhood-focus-and-legend-filters/README.md",
+    "title": "Neighborhood focus, home-type filtering and refreshed overlays",
+    "screenshots": [
+      "commits/06-neighborhood-focus-and-legend-filters/neighborhood-search.jpg"
+    ],
+    "provenance": "Direct browser capture of this working version, November 4, 2026. Hayes Valley selected with search input focused. Basemap tiles unavailable during capture."
   }
 ]
