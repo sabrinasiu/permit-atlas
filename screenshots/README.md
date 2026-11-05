@@ -1,6 +1,6 @@
 # Screenshot history
 
-55 original development screenshots, organized chronologically, plus a screenshot folder for each prior commit and the current version. The historical commit folders use the closest saved screenshot taken before each commit; they are clearly labeled representative and are not verified exact renders. Recreating historical versions was blocked by the managed browser policy. The build-site folder contains three direct browser captures; the newest chart folder contains representative captures from before panel-outline removal.
+63 original development screenshots, organized chronologically, plus a screenshot folder for each prior commit and the current version. The historical commit folders use the closest saved screenshot taken before each commit; they are clearly labeled representative and are not verified exact renders. Recreating historical versions was blocked by the managed browser policy. The build-site folder contains three direct browser captures; the newest chart folder contains representative captures from before panel-outline removal.
 
 ## By commit
 
@@ -93,6 +93,19 @@ File timestamps below preserve the original local screenshot modification times 
 54. [tracker permit hover details](iterations/54-tracker-permit-hover-details.jpg) — 2026-11-04T15:22:21.896345-08:00
 
 55. [smooth zoom and current tracker](iterations/55-tracker-smooth-zoom.jpg) — 2026-11-04T15:29:41.530899-08:00
+
+56. [submission-year timeline](iterations/56-tracker-submission-timeline.jpg) — 2026-11-04T15:36:58.599804-08:00
+
+57. [tracker submission range](iterations/57-tracker-submission-range.jpg) — 2026-11-04T15:44:28.619818-08:00
+58. [tracker open overview](iterations/58-tracker-open-overview.jpg) — 2026-11-04T15:44:33.500345-08:00
+
+59. [Home types before Construction overview and Travel range.](iterations/59-tracker-sidebar-order.jpg) — 2026-11-04T15:47:25.480427-08:00
+60. [Empty neighborhood search without a clear button.](iterations/60-tracker-empty-search.jpg) — 2026-11-04T15:48:44.156285-08:00
+61. [2020–2026 submission range with matching Construction overview dates and totals.](iterations/61-tracker-matched-time-range.jpg) — 2026-11-04T15:50:14.587238-08:00
+
+62. [Construction overview bar chart](iterations/62-tracker-bar-chart.jpg) — 2026-11-04T15:51:49.222267-08:00
+
+63. [Responsive desktop bar chart](iterations/63-tracker-desktop-bar-chart.jpg) — 2026-11-04T15:55:02.579861-08:00
 
 `manifest.json` maps commits to images; `iterations/index.json` records original filenames, timestamps and provenance. Basemap tiles require the external map service and may change independently of the app code.
 

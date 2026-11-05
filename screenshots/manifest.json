@@ -59,5 +59,13 @@
       "commits/07-travel-range-and-context/permit-hover-representative.jpg"
     ],
     "provenance": "Overview is a direct capture of this version. Supporting regional and tooltip captures precede the final zoom change and are labeled representative."
+  },
+  {
+    "commit_reference": "The commit introducing this folder; resolve with git log --diff-filter=A -- screenshots/commits/08-submission-range-and-bar-charts/overview.jpg",
+    "title": "Submission-year range filtering and responsive construction bar charts",
+    "screenshots": [
+      "commits/08-submission-range-and-bar-charts/overview.jpg"
+    ],
+    "provenance": "Direct browser capture of this version. All years and Housing units selected in the desktop layout."
   }
 ]

@@ -175,3 +175,17 @@ Labels distinguish single-unit homes, duplexes, triplexes, fourplexes, and apart
 ## Smoother zoom
 
 The map supports quarter-level zoom stops, half-level keyboard/double-click increments, and less sensitive wheel movement with a shorter debounce. The local basemap, regional context and permit canvases remain visible and transform with Leaflet’s zoom animation; expensive geometry redraws happen when the view settles. Basemap layers no longer repaint twice for both zoomend and moveend. `canvas-zoom.js` uses public projection APIs and keeps the canvas anchored through fractional zooms and existing map-pane offsets. Regression: `node tests/canvas-zoom.cjs`; browser checked zooming in and back out without console errors.
+
+
+## Submission-year slider
+
+A timeline slider is pinned above neighborhood search at the top of the sidebar. It defaults to All years and has independently draggable start and end handles for an inclusive filing/submission-year range, plus an All years reset. The limits come from actual `filed_date` values in the issued-permit snapshot (2000–2026); applications filed before 2011 appear because their permits were issued within the saved 2011–2026 issuance cohort. The slider does not imply that the dataset contains every application submitted in each year. Unknown filing dates remain in All years and are omitted from bounded year ranges.
+
+The selected filing-year range filters map marks, permit details, construction-chart cohorts and travel-range housing counts alongside existing neighborhood and home-type selections. Chart horizontal axes and the Construction overview date heading now follow the selected submission-year range. Annual charts group by filing date, matching the range filter; travel departure date and schedules remain independent. Year changes preserve the map camera and computed travel outline. Two native slider handles support pointer and keyboard input, stop at each other and allow a single-year range; redraws are coalesced per animation frame. No autoplay was added. Regression: `node tests/submission-timeline.cjs`, including filing/issuance distinction, saved 2019 and 2026 counts, missing dates, inclusive ranges, crossing clamps, pointer dragging, endpoint keyboard selection and reset behavior.
+
+
+Construction overview now starts expanded in the sidebar, with its charts and totals immediately available. The redundant Construction charts toggle and close button have been removed. The sidebar order is Home types, Construction overview, then Travel range.
+
+Construction overview uses annual stacked bars, colored by home type, for both build sites and housing units. Bar segments retain exact-count hover/focus readouts and legend highlighting.
+
+Annual charts resize to the sidebar width, with fewer year labels on long ranges; horizontal scrolling is not required on desktop.

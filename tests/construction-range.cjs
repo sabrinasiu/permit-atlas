@@ -1,0 +1,12 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+const source=fs.readFileSync(require('node:path').join(__dirname,'../app.js'),'utf8');
+const SubmissionTimeline=require('../submission-timeline.js'),PermitYears=require('../yearly.js'),HomeSizes=require('../size-breakdown.js');
+const records=[{permit_number:'a',filed_date:'2020-03-01',_issuedDay:'2024-01-01',_siteId:'a',_classification:{residential:true,units:2}},{permit_number:'b',filed_date:'2019-01-01',_issuedDay:'2021-01-01',_siteId:'b',_classification:{residential:true,units:1}},{permit_number:'c',filed_date:'2026-06-01',_issuedDay:'2026-09-01',_siteId:'c',_classification:{residential:true,units:40}}];
+const ctx={records,selectedSubmissionRange:{start:2020,end:2026},SubmissionTimeline};vm.createContext(ctx);
+vm.runInContext(source.slice(source.indexOf('function constructionPeriod('),source.indexOf('function renderYearChart(')),ctx);
+let period=ctx.constructionPeriod();assert.equal(period.start,'2020-01-01');assert.equal(period.end,'2026-12-31');
+const selected=records.filter(p=>SubmissionTimeline.matches(p,ctx.selectedSubmissionRange)),projected=ctx.submissionChartRecords(selected);
+const units=PermitYears.units(projected,period.start,period.end);assert.deepEqual(units.map(b=>b.year),[2020,2021,2022,2023,2024,2025,2026]);assert.equal(units[0].count,2);assert.equal(units[4].count,0);assert.equal(units[6].count,40);assert.equal(units.reduce((s,b)=>s+b.count,0),42);
+const annual=HomeSizes.annual(projected,period.start,period.end);assert.equal(annual.years[0].groups.reduce((s,g)=>s+g.sites,0),1);assert.equal(records[0]._issuedDay,'2024-01-01');
+ctx.selectedSubmissionRange={start:2026,end:2026};assert.equal(ctx.constructionPeriod().start,'2026-01-01');ctx.selectedSubmissionRange=null;assert.equal(ctx.constructionPeriod().start,'2019-01-01');
+console.log('Passed selected-range chart bounds, submission-year aggregation, matching totals, single-year/all-years ranges and unchanged permit history.');

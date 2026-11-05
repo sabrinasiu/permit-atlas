@@ -328,5 +328,53 @@
     "original_filename": "tracker-smooth-zoom.jpg",
     "captured_at_file_timestamp": "2026-11-04T15:29:41.530899-08:00",
     "provenance": "Direct browser capture of the current tracker after fractional zoom-in/out verification, with a 15-minute walking lens."
+  },
+  {
+    "file": "iterations/56-tracker-submission-timeline.jpg",
+    "original_filename": "tracker-submission-timeline.jpg",
+    "captured_at_file_timestamp": "2026-11-04T15:36:58.599804-08:00",
+    "provenance": "Direct browser capture of the submission-year slider at the top of the sidebar, selecting 2025 with 33 permits on the map."
+  },
+  {
+    "file": "iterations/57-tracker-submission-range.jpg",
+    "original_filename": "tracker-submission-range.jpg",
+    "captured_at_file_timestamp": "2026-11-04T15:44:28.619818-08:00",
+    "provenance": "Direct browser capture. Two draggable submission-year handles selecting 2014\u20132020, with 923 permits on the map."
+  },
+  {
+    "file": "iterations/58-tracker-open-overview.jpg",
+    "original_filename": "tracker-open-overview.jpg",
+    "captured_at_file_timestamp": "2026-11-04T15:44:33.500345-08:00",
+    "provenance": "Direct browser capture. Construction overview expanded by default, with filtered site and unit totals and home-type charts."
+  },
+  {
+    "file": "iterations/59-tracker-sidebar-order.jpg",
+    "original_filename": "tracker-sidebar-order.jpg",
+    "captured_at_file_timestamp": "2026-11-04T15:47:25.480427-08:00",
+    "provenance": "Direct browser capture. Home types before Construction overview and Travel range."
+  },
+  {
+    "file": "iterations/60-tracker-empty-search.jpg",
+    "original_filename": "tracker-empty-search.jpg",
+    "captured_at_file_timestamp": "2026-11-04T15:48:44.156285-08:00",
+    "provenance": "Direct browser capture. Empty neighborhood search without a clear button."
+  },
+  {
+    "file": "iterations/61-tracker-matched-time-range.jpg",
+    "original_filename": "tracker-matched-time-range.jpg",
+    "captured_at_file_timestamp": "2026-11-04T15:50:14.587238-08:00",
+    "provenance": "Direct browser capture. 2020\u20132026 submission range with matching Construction overview dates and totals."
+  },
+  {
+    "file": "iterations/62-tracker-bar-chart.jpg",
+    "original_filename": "tracker-bar-chart.jpg",
+    "captured_at_file_timestamp": "2026-11-04T15:51:49.222267-08:00",
+    "provenance": "Direct browser capture of annual stacked bars by home type for the selected 2020\u20132026 range."
+  },
+  {
+    "file": "iterations/63-tracker-desktop-bar-chart.jpg",
+    "original_filename": "tracker-desktop-bar-chart.jpg",
+    "captured_at_file_timestamp": "2026-11-04T15:55:02.579861-08:00",
+    "provenance": "Direct browser capture of the desktop responsive stacked bar chart after confirming its width matches the sidebar."
   }
 ]
